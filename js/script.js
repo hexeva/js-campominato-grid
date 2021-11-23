@@ -35,6 +35,26 @@ function easyMode(){
     if(document.getElementById('choose').value == 'easy'){
         for(let i = 1; i <= 100; i++){
             let squareValue = i;
+      
+    
+
+            // creo il nuovo elemento che sarà uguale al template nell'html
+
+            const gridSquare = document.createElement('div');
+            // aggiungo la classe al div creato
+            gridSquare.innerHTML = `${squareValue}`;
+
+            // aggiungo la dimensione del quadrato per la modalità easy
+
+            gridSquare.style.width = 'calc(100% / 10)';
+            gridSquare.style.height = 'calc(100% / 10)';
+
+            // appendo l'elemento creato alla griglia
+
+            gameGrid.appendChild(gridSquare);
         }
+
     }
+
 }
+// end function
