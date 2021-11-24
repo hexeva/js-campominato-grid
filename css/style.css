@@ -57,7 +57,8 @@ footer{
 .game-table{
     width: 500px;
     height: 500px;
-   
+    border: 1px solid black;
+    
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -82,6 +83,15 @@ footer{
  .square.bomb{
      background-color: red;
  }
+ 
+ #choose{
+     padding-right: 40px;
+ }
+ #play-btn{
+     padding: 0 20px;
+ }
+
+
 
  /* final classes */
 
