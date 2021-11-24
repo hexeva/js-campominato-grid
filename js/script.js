@@ -75,6 +75,10 @@ function startGame(){
     for(let i = 1; i <= maxGridNumber; i++){
         const newGeneratedSquare = generatedSquare(i,squareDimension);
 
+        // creo anche l'evento al click che vada ad aggiungere a ogni singolo quadrato la classe color 
+        // cellClick è la funzione di callback per il quadratino
+        newGeneratedSquare.addEventListener('click',cellClick),
+
         // appendo ora il nuovo elemento al padre
 
         gameGrid.appendChild(newGeneratedSquare);
@@ -111,5 +115,11 @@ function generatedSquare(innerNumber,cellDimension){
 
 }
 // fine funzione generatedSquare
+
+// funzione cellClick per aggiungere la classe color al singolo quadrato
+
+function cellClick(){
+    this.classList.add('color');
+}
 
 
