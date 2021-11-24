@@ -5,8 +5,8 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro. 
 
 // QUANDO PREMO PLAY:
-    //  sparisce l'h2 e appare la griglia
-    // verificare cosa ha scelto l'utente
+    // [1] sparisce l'h2 e appare la griglia
+    // [2] verificare cosa ha scelto l'utente
      // appaiono tanti quadrati quanto la scelta di difficoltà dell'utente i quadrati dando classe square e popolare il quadrato con span e numero + dare altezza e larghezza al quadrato a seconda della difficoltà.
 
 // al singolo CLICK della cella aggiungo la classe color 
@@ -38,6 +38,43 @@ function startGame(){
     // rimuovo la classe hidden
     gameGrid.classList.remove('hidden');
 
+    // [2] verificare cosa ha scelto l'utente
+    // prima richiamo e memorizzo in una variabile cosa la select dell'html
+
+    const levelSelect = document.getElementById('choose').value;
+    
+    // let level;
+
+    // creo un numero di quadrati in base alla selezione della difficoltà
+    // definisco una variabile per il numero di quadrati e una variabile per le sue dimensioni:
+    let maxGridNumber;
+    let squareDimension;
+    // a seconda della scelta select MaxGridNumber prenderà un valore
+    if(levelSelect == 'easy'){
+        maxGridNumber = 100;
+        squareDimension = 10;
+    }else if(levelSelect == 'hard'){
+
+        maxGridNumber =  81;
+        squareDimension = 9;
+
+    }else {
+
+        maxGridNumber = 49;
+        squareDimension = 7;
+
+    }
+
+    // creo ora un ciclo for per andare volta volta a creare un nuovo quadrato
+    for(let i = 1; i <= maxGridNumber; i++){
+        console.log(i);
+
+    }
+
+  
+
+
     
 }
-// fine funzione
+// fine funzione principale
+
