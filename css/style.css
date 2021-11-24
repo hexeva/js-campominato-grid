@@ -35,6 +35,7 @@ footer{
     height: 80px;
 }
 
+
 /* ///////// */
 
 /* header */
@@ -69,7 +70,22 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
 }
 .square.color{
-    background-color: #6495ed;
+    background-color: #6495ed; 
+    color: white;
+
+ }
+
+ .square.bomb{
+     background-color: red;
+ }
+
+ /* final classes */
+
+ .hidden{
+     display: none;
+ }
+    
