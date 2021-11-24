@@ -24,7 +24,9 @@ playButton.addEventListener('click',startGame);
 
 
 // FUNZIONI
+
 // funzione di inizio gioco
+
 function startGame(){
     //  sparisce l'h2 dandogli classe hidden appare la griglia togliendo la classe hidden
     // seleziono l'h2
@@ -37,6 +39,8 @@ function startGame(){
     console.log(gameGrid);
     // rimuovo la classe hidden
     gameGrid.classList.remove('hidden');
+    // resetto il la griglia a ogni start
+    gameGrid.innerHTML = '';
 
     // [2] verificare cosa ha scelto l'utente
     // prima richiamo e memorizzo in una variabile cosa la select dell'html
@@ -65,16 +69,47 @@ function startGame(){
 
     }
 
-    // creo ora un ciclo for per andare volta volta a creare un nuovo quadrato
+    // creo ora un ciclo for per andare volta volta a popolare la main grid con un nuovo quadrato
+
+    // IL quadrato sarà il risultato della funzione che ho creato (generatedSquare)
     for(let i = 1; i <= maxGridNumber; i++){
-        console.log(i);
+        const newGeneratedSquare = generatedSquare(i,squareDimension);
+
+        // appendo ora il nuovo elemento al padre
+
+        gameGrid.appendChild(newGeneratedSquare);
+
 
     }
 
-  
-
-
-    
 }
 // fine funzione principale
+
+// funzione per generare i quadrati:
+    // argomenti:
+//    innerNumber = il numero che è dentro ogni quadrato
+//    cellDimension = la dimensione del quadrato
+//  return = la cella completa pronta per essere appeso
+
+// variabile della funzione 
+
+
+
+function generatedSquare(innerNumber,cellDimension){
+    // creo il nuovo elemnto
+    const newCell = document.createElement('div');
+    // aggiungere classe square
+    newCell.classList.add('square');
+    // popolare il quadrato con lo span e il suo contenuto
+    newCell.innerHTML = `<span>${innerNumber}</span>`;
+    // dare dimensioni ai quadrati
+    newCell.style.width = `calc(100% / ${cellDimension})`;
+    newCell.style.height = `calc(100% / ${cellDimension})`;
+    // return
+    return newCell;
+
+
+}
+// fine funzione generatedSquare
+
 
